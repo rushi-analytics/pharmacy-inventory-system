@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>💊 Pharmacy Inventory System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h2 {
+            margin-top: 40px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        input {
+            padding: 6px;
+            margin: 4px 0;
+        }
+        button {
+            padding: 8px 12px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        .btn-edit {
+            color: green;
+            text-decoration: none;
+        }
+        .btn-delete {
+            color: red;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>💊 Pharmacy Inventory System</h1>
+
+    <h2>Add Medicine</h2>
+    <form method="POST" action="/add">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br>
+        <label>Stock:</label><br>
+        <input type="number" name="stock" required><br>
+        <label>Price:</label><br>
+        <input type="number" step="0.01" name="price" required><br>
+        <label>Expiry Date:</label><br>
+        <input type="date" name="expiry" required><br>
+        <button type="submit">➕ Add</button>
+    </form>
+
+    <h2>📦 Available Medicines</h2>
+    {% if available %}
+    <table>
+        <tr>
+            <th>Name</th><th>Stock</th><th>Price (₹)</th><th>Expiry</th><th>Actions</th>
+        </tr>
+        {% for m in available %}
+        <tr>
+            <td>{{ m.name }}</td>
+            <td>{{ m.stock }}</td>
+            <td>₹{{ "%.2f"|format(m.price) }}</td>
+            <td>{{ m.expiry_date.date() }}</td>
+            <td>
+                <a class="btn-edit" href="/update/{{ m.name }}">✏️ Edit</a> |
+                <a class="btn-delete" href="/delete/{{ m.name }}" onclick="return confirm('Delete {{ m.name }}?');">🗑 Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No available medicines.</p>
+    {% endif %}
+
+    <h2>🛑 Expired Medicines</h2>
+    {% if expired %}
+    <table>
+        <tr>
+            <th>Name</th><th>Stock</th><th>Price (₹)</th><th>Expired On</th>
+        </tr>
+        {% for m in expired %}
+        <tr>
+            <td>{{ m.name }}</td>
+            <td>{{ m.stock }}</td>
+            <td>₹{{ "%.2f"|format(m.price) }}</td>
+            <td>{{ m.expiry_date.date() }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p>No expired medicines ✅</p>
+    {% endif %}
+
+</body>
+</html>
