@@ -35,3 +35,5 @@ git clone https://github.com/rushi-analytics/pharmacy-inventory-system
 cd pharmacy-inventory-system
 pip install -r requirements.txt
 python app.py
+
+⚠️ Note: This project is intended for demonstration purposes only. It uses a CSV file for storage, which is not persistent on platforms like Render. As a result, data will not be saved permanently.
