@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>💊 Pharmacy Inventory System</title>
 
-    <!-- Inventory page uses its own simple styling -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -44,20 +43,18 @@
             float: right;
             margin-top: 10px;
             text-decoration: none;
-            color: #5b7cfa;
             font-weight: bold;
+            color: #5b7cfa;
         }
     </style>
 </head>
 
 <body>
 
-    <!-- LOGOUT -->
     <a href="/logout" class="logout">Logout</a>
 
     <h1>💊 Pharmacy Inventory System</h1>
 
-    <!-- ADD MEDICINE -->
     <h2>Add Medicine</h2>
     <form method="POST" action="/add">
         <label>Name:</label><br>
@@ -75,7 +72,6 @@
         <button type="submit">➕ Add</button>
     </form>
 
-    <!-- AVAILABLE MEDICINES -->
     <h2>📦 Available Medicines</h2>
     {% if available %}
     <table>
@@ -107,7 +103,6 @@
         <p>No available medicines.</p>
     {% endif %}
 
-    <!-- EXPIRED MEDICINES -->
     <h2>🛑 Expired Medicines</h2>
     {% if expired %}
     <table>
