@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #e9edff;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 850px;
+  height: 450px;
+  background: white;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* FORMS */
+.form {
+  width: 50%;
+  height: 100%;
+  padding: 60px;
+  position: absolute;
+  top: 0;
+}
+
+.login-form {
+  left: 0;
+}
+
+.register-form {
+  right: 0;
+  opacity: 0;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+a {
+  font-size: 13px;
+  margin: 10px 0;
+  display: block;
+}
+
+button {
+  padding: 12px 30px;
+  background: #5b7cfa;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* SOCIAL LOGIN */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.social {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.social:hover {
+  transform: scale(1.1);
+}
+
+.google { color: #DB4437; }
+.github { color: #333; }
+.linkedin { color: #0A66C2; }
+
+.divider {
+  font-size: 13px;
+  color: #888;
+}
+
+/* BLUE CURVED PANEL */
+.panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #5b7cfa;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 200px 0 0 200px;
+  transition: 0.8s ease;
+}
+
+.panel-content {
+  text-align: center;
+  position: absolute;
+  transition: 0.4s;
+}
+
+.register-text {
+  opacity: 0;
+}
+
+/* ACTIVE (REGISTER PAGE) */
+.card.active .panel {
+  right: 50%;
+  border-radius: 0 200px 200px 0;
+}
+
+.card.active .login-form {
+  opacity: 0;
+}
+
+.card.active .register-form {
+  opacity: 1;
+}
+
+.card.active .login-text {
+  opacity: 0;
+}
+
+.card.active .register-text {
+  opacity: 1;
+}
