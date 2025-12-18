@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <title>Login | Pharmacy Inventory</title>
 
-  <!-- Icons -->
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Main UI CSS -->
+  <!-- Main UI CSS (Flask static) -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -18,9 +18,11 @@
   <!-- LOGIN FORM -->
   <div class="form login-form">
     <h2>Login</h2>
-  {% if error %}
-    <p style="color:red; font-size:14px;">{{ error }}</p>
-  {% endif %}
+
+    {% if error %}
+      <p style="color:red; font-size:14px;">{{ error }}</p>
+    {% endif %}
+
     <div class="social-icons">
       <a href="#" class="social google"><i class="fab fa-google"></i></a>
       <a href="#" class="social github"><i class="fab fa-github"></i></a>
@@ -29,14 +31,14 @@
 
     <span class="divider">or use your account</span>
 
-    <form method="POST">
+    <form method="POST" action="{{ url_for('login') }}">
       <input type="text" name="username" placeholder="Username" required>
       <input type="password" name="password" placeholder="Password" required>
       <button type="submit">Login</button>
     </form>
   </div>
 
-  <!-- REGISTER FORM -->
+  <!-- REGISTER FORM (UI ONLY) -->
   <div class="form register-form">
     <h2>Register</h2>
 
@@ -51,7 +53,7 @@
     <input type="text" placeholder="Username">
     <input type="email" placeholder="Email">
     <input type="password" placeholder="Password">
-    <button>Register</button>
+    <button type="button">Register</button>
   </div>
 
   <!-- BLUE CURVED PANEL -->
@@ -71,6 +73,7 @@
 
 </div>
 
+<!-- JS (Flask static) -->
 <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 </html>
