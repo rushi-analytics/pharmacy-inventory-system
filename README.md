@@ -1,111 +1,116 @@
-💊 Pharmacy Inventory Management System
+# 💊 Pharmacy Inventory Management System
 
-A simple, user-friendly web-based Pharmacy Inventory Management System built using Flask, featuring secure login, medicine tracking, and inventory management.
-The application is deployed live on Render for demonstration purposes.
+A simple and user-friendly **web-based Pharmacy Inventory Management System** built using **Flask**.  
+The application supports **secure login**, medicine stock management, and is **deployed live on Render** for demonstration purposes.
 
-🌐 Live Demo
+---
 
-🔗 Visit the App:
+## 🌐 Live Demo
+
+🔗 **Application URL**  
 https://pharmacy-inventory-system-l8ph.onrender.com/
 
-🔐 Login Credentials (Demo)
+---
 
-Use the following credentials to access the inventory dashboard:
+## 🔐 Login Credentials (Demo Access)
 
-Username: admin
-Password: admin123
+Use the following credentials to log in:
 
+| Username | Password |
+|---------|----------|
+| admin   | admin123 |
 
-⚠️ Registration UI is for demonstration only. Currently, only the above admin credentials are supported.
+> ⚠️ **Note**  
+> The Register section is **UI-only for demonstration**.  
+> Only the above admin credentials are supported.
 
-🚀 Features
+---
 
-Secure login-based access to inventory
+## 🚀 Features Overview
 
-Add new medicines with:
+| Feature | Description |
+|-------|-------------|
+| 🔐 Secure Login | Login-protected inventory access |
+| ➕ Add Medicine | Add stock with price & expiry |
+| ✏️ Update Medicine | Edit stock, price & expiry |
+| 🗑 Delete Medicine | Remove incorrect entries |
+| 📦 Available Inventory | View valid medicines |
+| ❌ Expired Inventory | Auto-detect expired stock |
+| 💾 CSV Storage | Auto save/load inventory |
+| 🌐 Cloud Hosting | Deployed on Render |
 
-Stock quantity
+---
 
-Price
+## 🛠️ Technology Stack
 
-Expiry date
+| Layer | Technology |
+|------|-----------|
+| Backend | Python (Flask) |
+| Frontend | HTML, CSS, Jinja2 |
+| Auth | Flask Sessions |
+| Storage | CSV File |
+| Hosting | Render Cloud |
 
-View medicines categorized as:
+---
 
-✅ Available
+## 📁 Project Structure
 
-❌ Expired
-
-Update existing medicine details
-
-Delete incorrect or outdated entries
-
-Automatic CSV-based data load and save
-
-Clean and responsive UI
-
-Deployed live using Render
-
-🛠️ Tech Stack
-
-Backend: Python (Flask)
-
-Frontend: HTML, CSS, Jinja2
-
-Data Storage: CSV file
-
-Deployment: Render Cloud Platform
-
-📁 Project Structure
+```text
 pharmacy-inventory-system/
-├── app.py                  # Main Flask application
+├── app.py
 ├── static/
-│   ├── style.css           # UI styling
-│   └── script.js           # UI interactions
+│   ├── style.css
+│   └── script.js
 ├── templates/
-│   ├── login.html          # Login & Register UI
-│   ├── inventory.html      # Inventory dashboard
-│   └── update.html         # Update medicine page
-├── pharmacy_stock.csv      # Inventory data storage
-├── requirements.txt        # Python dependencies
-└── README.md               # Project documentation
-
+│   ├── login.html
+│   ├── inventory.html
+│   └── update.html
+├── pharmacy_stock.csv
+├── requirements.txt
+└── README.md
 ⚙️ Installation & Local Setup
+bash
+Copy code
 git clone https://github.com/rushi-analytics/pharmacy-inventory-system.git
 cd pharmacy-inventory-system
 pip install -r requirements.txt
 python app.py
+Open browser:
 
-
-Open in browser:
-
+cpp
+Copy code
 http://127.0.0.1:5000
+🧪 Application Flow
+Login using demo credentials
+
+Inventory dashboard loads
+
+Add / update / delete medicines
+
+System auto-classifies expired items
+
+Data is stored in CSV
 
 ⚠️ Important Notes
+Project is for learning & demo purposes
 
-This project is intended for learning and demonstration purposes only
+CSV storage is not persistent on Render
 
-Inventory data is stored in a CSV file
+Data may reset on redeploy
 
-Platforms like Render do not guarantee persistent storage
+Login is hardcoded (admin-only)
 
-Data may reset when the app restarts or redeploys
+🚧 Future Enhancements
+Database integration (SQLite/PostgreSQL)
 
-Login system is admin-only (hardcoded) for simplicity
+Password hashing
 
-🚧 Future Enhancements (Planned)
+OAuth (Google / GitHub / LinkedIn)
 
-User registration with database (SQLite)
-
-Password hashing & user roles
-
-Google / GitHub OAuth login
-
-Persistent database storage
+Role-based access
 
 Dashboard analytics
 
 👨‍💻 Author
-
 Rushikesh Nagapurkar
-🔗 GitHub: https://github.com/rushi-analytics
+GitHub: https://github.com/rushi-analytics
