@@ -8,7 +8,7 @@ The application supports **secure login**, medicine stock management, and is **d
 ## 🌐 Live Demo
 
 🔗 **Application URL**  
-https://pharmacy-inventory-system-l8ph.onrender.com/
+
 https://pharmacy-inventory-system-l8ph.onrender.com/login
 
 ---
